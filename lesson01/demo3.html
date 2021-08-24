@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fun() {
+        console.log(this)
+    }
+
+    var obj = {
+        name: "zhangsan",
+        sayName: fun
+    }
+
+    console.log(fun === obj.sayName);  // 返回true
+
+    fun(); // 打印 Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+    obj.sayName(); // 打印 {name: "zhangsan", sayName: ƒ}
+</script>
+<script>
+    function fun() {
+        console.log(this)
+        console.log(this.name)
+    }
+
+    var name = "lisi";
+
+    fun()  // 打印 lisi
+</script>
+</body>
+</html>

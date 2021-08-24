@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="post">
+    <p>
+        <span>用户名: </span> <input type="text" id="username">
+    </p>
+    <p>
+        <span>性别: </span>
+        <input type="radio" name="sex" value="man" id="boy"> 男
+        <input type="radio" name="sex" value="women" id="girl"> 女
+    </p>
+</form>
+<script>
+    var boy_radio = document.getElementById('boy');
+    var girl_radio = document.getElementById('girl');
+    var text = document.getElementById('username');
+
+    boy_radio.checked = false  // js中控制标签不选中
+    girl_radio.checked = true  // js中控制标签被选中
+
+    console.log(boy_radio.checked)  // 检查'男'标签是否被选中
+    console.log(girl_radio.checked)  // 检查'女'标签是否被选中
+
+    text.value = "zhangsan"  // js中控制文本框中的内容
+    console.log(text.value)  // 输出文本框中的内容
+</script>
+</body>
+</html>

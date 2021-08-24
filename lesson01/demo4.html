@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var zhangsan = {
+    //     name: "zhangsan",
+    //     age: 3,
+    //     run: function run(){
+    //         console.log(`${this.name} is running!`)
+    //     }
+    // }
+    //
+    // var lisi = {
+    //     name: "lisi"
+    // }
+    //
+    // lisi.__proto__ = zhangsan
+    //
+    // lisi.run()
+
+    class Student{
+        constructor(name) {
+            this.name = name;
+        }
+        hello(){
+            alert(`hello ${this.name}`)
+        }
+    }
+    var xiaoming = new Student("xiaoming")
+    // xiaoming.hello()
+
+    class SubStudent extends Student {
+        constructor(name,grade) {
+            super(name);
+            this.grade = grade;
+        }
+        getGrade() {
+            alert(`grade = ${this.grade}`)
+        }
+    }
+    var zhangsan = new SubStudent("zhangsan",88);
+    // zhangsan.getGrade()
+
+    var subStudent = SubStudent.prototype;
+    var zhangsan1 = zhangsan.__proto__;
+    console.log(subStudent)
+    console.log(zhangsan1)
+    console.log(xiaoming.constructor)
+</script>
+</body>
+</html>
